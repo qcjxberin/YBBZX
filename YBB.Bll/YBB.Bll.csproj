@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{786D2C2A-B4CF-467B-A5AD-1DBFB7F19CA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YBB.Bll</RootNamespace>
+    <AssemblyName>YBB.Bll</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ant.DAL">
+      <HintPath>..\Lib\ANT 6.1\Ant.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Ant.Model, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ANT 6.1\Ant.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\Lib\ANT 6.1\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminLog.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Channel.cs" />
+    <Compile Include="ComManagent.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="config\WordSpliter.cs" />
+    <Compile Include="config\XmlControl.cs" />
+    <Compile Include="DefaultConfig.cs" />
+    <Compile Include="DefaultConfigFileManager.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="General.cs" />
+    <Compile Include="GeneralConfigFileManager.cs" />
+    <Compile Include="GeneralConfigInfo.cs" />
+    <Compile Include="GeneralConfigs.cs" />
+    <Compile Include="HiUploader.cs" />
+    <Compile Include="IConfigInfo.cs" />
+    <Compile Include="IndexSearch.cs" />
+    <Compile Include="Info.cs" />
+    <Compile Include="ManagedThreadPool.cs" />
+    <Compile Include="Member.cs" />
+    <Compile Include="News.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="ResourcesHelper.cs" />
+    <Compile Include="ScheduleConfigFileManager.cs" />
+    <Compile Include="ScheduleConfigInfo.cs" />
+    <Compile Include="ScheduleConfigs.cs" />
+    <Compile Include="ScheduledEvents\Event.cs" />
+    <Compile Include="ScheduledEvents\EventLogs.cs" />
+    <Compile Include="ScheduledEvents\EventManager.cs" />
+    <Compile Include="ScheduledEvents\IEvent.cs" />
+    <Compile Include="Semaphore.cs" />
+    <Compile Include="SerializationHelper.cs" />
+    <Compile Include="ShootSeg\SegList.cs" />
+    <Compile Include="ShootSeg\Segment.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="WebInfo.cs" />
+    <Compile Include="YBBHttpModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\YBBQYCMS\YBBDC.Common\YBBDC.Common.csproj">
+      <Project>{77056b80-f298-4fe7-9a33-77d0d86b034a}</Project>
+      <Name>YBBDC.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YBB.Common\YBB.Common.csproj">
+      <Project>{998d655a-7a47-407d-bb70-f154be20a879}</Project>
+      <Name>YBB.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YBB.Config\YBB.Config.csproj">
+      <Project>{54d33f79-6a38-4fff-b34d-c6aa23b45278}</Project>
+      <Name>YBB.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YBB.DAL\YBB.DAL.csproj">
+      <Project>{08a08a2e-d301-4a00-8bb7-cb4331963a65}</Project>
+      <Name>YBB.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
